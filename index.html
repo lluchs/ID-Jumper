@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<script>
+			window.addEventListener("load", function(){
+				var theButton;
+				var UIItemProperties = {
+					disabled: false,
+					title: "Jumper",
+					icon: "icon.png",
+				}
+				theButton = opera.contexts.toolbar.createItem(UIItemProperties);
+				theButton.addEventListener('click', function() {
+					var tab = opera.extension.tabs.getFocused();
+					if(tab) {
+						//opera.postError("Tab URL: " + tab.url);
+						opera.extension.broadcastMessage(tab.url);
+					}
+				}, false);
+				opera.contexts.toolbar.addItem(theButton);
+			}, false);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

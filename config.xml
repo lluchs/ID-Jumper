@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets">
+    <name>ID-Jumper</name>
+    <description>Show IDs on the page for jumping.</description>
+    <author>Luchs</author>
+    <icon src="icon.png"/> <!-- http://openiconlibrary.sourceforge.net/gallery2/?./Icons/actions/arrow-down-double-2.png -->
+</widget>
