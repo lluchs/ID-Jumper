@@ -8,13 +8,20 @@ oex_jumper = {
 		var overlay = document.createElement('div');
 		overlay.style.cssText = "position: absolute; padding-left: 0.5em; padding-right: 0.5em; background-color: rgba(0, 255, 0, 0.9); border-radius: 1em; box-shadow: 0.2em 0.2em 0.5em rgba(128, 128, 128, 0.5); z-index: 10000;";
 		
-		var nodes = document.querySelectorAll('[id]');
+		var nodes = document.querySelectorAll('[id],a[name]');
 		var length = nodes.length;
 		for(var i=0; i<length; i++) {
 			var e = nodes[i];
 			var parent = e.offsetParent; //|| e.parentElement;
 			if(!parent)
 				continue;
+			
+			var id = e.id;
+			var style = 'color: blue;';
+			if(!id) {
+				id = e.name;
+				style = 'color: red;';
+			}
 			
 			var insert = overlay.cloneNode(false);
 			var top = e.offsetTop, left = e.offsetLeft;
@@ -25,7 +32,7 @@ oex_jumper = {
 			}
 			insert.style.top = top;
 			insert.style.left = left;
-			insert.innerHTML = '<a style="color: blue; text-decoration: none; border: 0px;" href="#' + e.id + '">#' + e.id + '</a>';
+			insert.innerHTML = '<a style="' + style + ' text-decoration: none; border: 0px;" href="#' + id + '">#' + id + '</a>';
 			insert.firstChild.addEventListener('click', oex_jumper.hide, false);
 			
 			parent.appendChild(insert);
