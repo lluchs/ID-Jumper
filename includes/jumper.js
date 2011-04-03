@@ -52,7 +52,7 @@ oex_jumper = {
 };
 
 opera.extension.addEventListener('message', function(event) {
-	if(event.data == document.URL.replace(/#.*/, '')) {
+	if(event.data == document.URL) {
 		if(!oex_jumper.overlays.length)
 			oex_jumper.show();
 		else
