@@ -12,6 +12,8 @@ oex_jumper = {
 		var length = nodes.length;
 		for(var i=0; i<length; i++) {
 			var e = nodes[i];
+			if(e.currentStyle.display == 'none')
+				continue;
 			var parent = e.offsetParent; //|| e.parentElement;
 			if(!parent)
 				continue;
