@@ -32,8 +32,8 @@ oex_jumper = {
 				top += obj.offsetTop;
 				left += obj.offsetLeft;
 			}
-			insert.style.top = top;
-			insert.style.left = left;
+			insert.style.top = top + 'px';
+			insert.style.left = left + 'px';
 			insert.innerHTML = '<a style="' + style + ' text-decoration: none; border: 0px;" href="#' + id + '">#' + id + '</a>';
 			insert.firstChild.addEventListener('click', oex_jumper.hide, false);
 			
